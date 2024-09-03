@@ -13,6 +13,11 @@ async function getCategories() {
   return categories.map((c) => c.toObject());
 }
 
+async function getCategoryById(id) {
+  let category = await Category.findById(id);
+  return category.toObject();
+}
+
 async function updateCategory(id, model) {
   await Category.findByIdAndUpdate({ _id: id }, model);
   return;
@@ -23,4 +28,10 @@ async function deleteCategory(id) {
   return;
 }
 
-module.exports = { addCategory, updateCategory, deleteCategory, getCategories };
+module.exports = {
+  addCategory,
+  updateCategory,
+  deleteCategory,
+  getCategories,
+  getCategoryById,
+};

@@ -20,6 +20,12 @@ router.get('', async (req, res) => {
   res.send(result);
 });
 
+router.get('/:id', async (req, res) => {
+  let id = req.params['id'];
+  let result = await getCategories(id);
+  res.send(result);
+});
+
 router.put('/:id', async (req, res) => {
   let model = req.body;
   let id = req.params['id'];
