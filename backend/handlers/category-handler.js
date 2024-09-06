@@ -25,7 +25,6 @@ async function updateCategory(id, model) {
 
 async function deleteCategory(id) {
   await Category.findByIdAndDelete(id);
-  return;
 }
 
 module.exports = {
