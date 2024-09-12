@@ -18,7 +18,7 @@ router.post('', async (req, res) => {
 router.put('/:id', async (req, res) => {
   console.log('here');
   let model = req.body;
-  let id = req.params('id');
+  let id = req.params['id'];
   await updateBrand(id, model);
   res.send({ message: 'update' });
 });
