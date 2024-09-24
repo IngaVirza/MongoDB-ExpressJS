@@ -9,7 +9,7 @@ async function registerUser(model) {
     name: model.name,
     email: model.email,
     password: hashPassword,
-    isAdmin: user.isAdmin,
+    isAdmin: model.isAdmin,
   });
   await user.save();
 }
