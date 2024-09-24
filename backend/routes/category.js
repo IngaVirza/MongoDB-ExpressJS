@@ -15,8 +15,7 @@ router.post('', async (req, res) => {
 });
 
 router.get('', async (req, res) => {
-  let model = req.body;
-  let result = await getCategories(model);
+  let result = await getCategories();
   res.send(result);
 });
 
